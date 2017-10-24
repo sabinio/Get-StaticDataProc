@@ -1,14 +1,3 @@
-# Get-StaticDataProc
-This PowerShell function is designed for source controlling static/reference data from a database.
-
-The script generate a Stored Procedure script which will create a temp table, script the current data and insert it into the temp table. And then finally merge the results back to the table.
-
-The stored procedure can then be deployed to the database and stored in source control to manage any future changes. 
-
-For SSDT project the procedure can be executed in the PostDeploy script to ensure the data is always consistant.
-
-## Examples
-```
 Set-Location $PSScriptRoot
 Import-Module '..\src\StaticDataProc.psd1' -Force
 Import-Module -Name SqlServer -Force   # This module is a dependancy, use Install-Module SQLServer -Force -AllowClobber if not available
@@ -33,6 +22,8 @@ foreach ($table in $tables)
 {
     Get-StaticDataProc -Server $Server -Database $Database -Schema $Schema -Table $Table -DeleteUnknown $DeleteUnknownRecords  | Out-File $outFile -Append
 }
-```
-## Known Limitations
-You must use NT Authentication to connect to the database
+
+
+
+
+
