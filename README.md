@@ -35,4 +35,5 @@ foreach ($table in $tables)
 }
 ```
 ## Known Limitations
+Target table must have a Primary Key (required for the Merge join)
 You must use NT Authentication to connect to the database
