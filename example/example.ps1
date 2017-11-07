@@ -5,7 +5,7 @@ Import-Module -Name SqlServer -Force   # This module is a dependancy, use Instal
 $server = "SQL16"
 $database = "WideWorldImportersDW"
 $Schema = "Dimension"
-$tables = "Transaction Type"
+$table = "Transaction Type"
 $DeleteUnknownRecords = $true  # This param controls if the merge statement should delete not matched records
 
 # Example 1 - Return a single table to the console output
